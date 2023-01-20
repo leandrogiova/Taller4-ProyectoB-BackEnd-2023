@@ -22,6 +22,9 @@ public class ProductoService {
     }
 
     public void enviarProducto(Producto p1){
+        p1.setId(100);
+        p1.setNombre("cofe");
+        p1.setPrecio(150);
         productoRepo.save(p1);
     }
 
