@@ -21,30 +21,30 @@ public class Producto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-//    @Column(name = "numero_producto", unique=true)
-//    private int numeroProducto;
-
     @Column(name = "nombre")
     private String nombre;
+
+    @Column(name = "numero_producto", unique=true)
+    private int numeroProducto;
 
     @Column(name = "precio")
     private int precio;
 
 
-    @Column(name = "enStock")
-    private boolean enStock;
+//    @Column(name = "enStock")
+//    private boolean enStock;
 
 //    @Column(name = "cobrado")
 //    private boolean cobrado;
 
     public Producto(){        
     }
-    public Producto(Long id, String nombre, int precio, boolean enStock) {
+    public Producto(Long id, String nombre, int numeroProducto,int precio) {
         this.id = id;
-//        this.numeroProducto = numeroProducto;
+        this.numeroProducto = numeroProducto;
         this.nombre = nombre;
         this.precio = precio;
-        this.enStock = enStock;
+//        this.enStock = enStock;
 //        this.cobrado = cobrado;
 
     }
@@ -79,15 +79,16 @@ public class Producto {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     } 
-
+/* 
     public boolean getEnStock(){
         return enStock;
     }
     public void setEntock(boolean enStock){
         this.enStock = enStock;
     }
-    public void setId(int i) {
-    }
+*/
+//    public void setId(int i) {
+//    }
 
 //    public boolean getCobrado(){
 //        return cobrado;
