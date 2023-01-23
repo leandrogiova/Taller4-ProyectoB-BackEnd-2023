@@ -15,6 +15,8 @@ import ProyectoBar.ProyectoBar.services.ProductoService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 
+//http://localhost:8080/productos/lista
+
 
 @CrossOrigin
 @RestController
@@ -32,6 +34,15 @@ public class ProductoController {
 
     @PostMapping("/enviar")
     public void enviarProducto(@RequestBody Producto p1){
+
+       /* 
+        p1 = new Producto();
+        p1.setId((long) 100);
+        p1.setNombre("Cafesito");
+        p1.setPrecio(101);
+        */
+        
+
         productoService.enviarProducto(p1);
     }
 
