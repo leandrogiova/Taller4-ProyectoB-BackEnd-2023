@@ -7,7 +7,6 @@ import ProyectoBar.ProyectoBar.models.Producto;
 
 @Repository
 public interface ProductoRepository extends JpaRepository<Producto, Long>{
-
     
 
 }
