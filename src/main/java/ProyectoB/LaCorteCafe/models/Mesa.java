@@ -31,9 +31,9 @@ public class Mesa {
     @Column(name = "numero_mesa")
     private int numero_mesa;
 
-//    @Column(name = "lista_productos")
-//    @OneToMany
-//    private Producto[] listaProductos;
+    @Column(name = "lista_productos")
+    @OneToMany
+    private Producto[] listaProductos;
 
     @Column(name = "estado")
     private boolean estado;
@@ -51,15 +51,16 @@ public class Mesa {
     @Column(name = "forma_pago")
     private String forma_pago;
 
-//    @Column(name = "productos_cobrados")
-//    private Producto[] productosCobrados;
+    @Column(name = "productos_cobrados")
+    @OneToMany
+    private Producto[] productosCobrados;
 
 
 
     public Mesa(){
     }
 
-/* 
+
     public Long getId() {
         return id;
     }
@@ -123,14 +124,14 @@ public class Mesa {
         return this.forma_pago;
     }
 
-
+ 
     public void setProductosCobrados(Producto[] productosCobrados){
         this.productosCobrados = productosCobrados;
     }
     public Producto[] getProductosCobrados(){
         return productosCobrados;
     }
-*/
+
 
 }
 
