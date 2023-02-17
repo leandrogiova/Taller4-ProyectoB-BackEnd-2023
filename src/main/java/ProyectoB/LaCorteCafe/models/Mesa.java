@@ -1,8 +1,9 @@
 package ProyectoB.LaCorteCafe.models;
 
 import java.sql.Date;
+import java.util.List;
 
-
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,17 +13,8 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 
-/* 
-public class Mesa {
-
-}
-*/
-
-
-
-
 @Entity
-@Table(name = "Producto")
+@Table(name = "mesa")
 public class Mesa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,12 +23,13 @@ public class Mesa {
     @Column(name = "numero_mesa")
     private int numero_mesa;
 
-    @Column(name = "lista_productos")
+     
+//    @OneToMany(mappedBy = "mesa", cascade = CascadeType.ALL, orphanRemoval = true)
     @OneToMany
-    private Producto[] listaProductos;
+    private List<Producto> listaProductos;
 
     @Column(name = "estado")
-    private boolean estado;
+    private Boolean estado;
     
     @Column(name = "fecha")
     private Date fecha;
@@ -51,11 +44,6 @@ public class Mesa {
     @Column(name = "forma_pago")
     private String forma_pago;
 
-    @Column(name = "productos_cobrados")
-    @OneToMany
-    private Producto[] productosCobrados;
-
-
 
     public Mesa(){
     }
@@ -68,11 +56,11 @@ public class Mesa {
         this.id = id;
     }
 
-
-    public Producto[] getListaProductos() {
+ 
+    public List<Producto> getListaProductos() {
         return listaProductos;
     }
-    public void setListaProductos(Producto[] listaProductos) {
+    public void setListaProductos(List<Producto> listaProductos) {
         this.listaProductos = listaProductos;
     }
 
@@ -124,14 +112,14 @@ public class Mesa {
         return this.forma_pago;
     }
 
- 
+/* 
     public void setProductosCobrados(Producto[] productosCobrados){
         this.productosCobrados = productosCobrados;
     }
     public Producto[] getProductosCobrados(){
         return productosCobrados;
     }
-
+*/
 
 }
 

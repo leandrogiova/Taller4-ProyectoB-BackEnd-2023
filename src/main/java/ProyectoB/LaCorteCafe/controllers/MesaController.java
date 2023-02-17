@@ -33,7 +33,7 @@ public class MesaController {
 
     @GetMapping("/lista")
     public List<Mesa> mesasAbiertas(){
-      
+      /* 
         List<Mesa> lista1;
         List<Mesa> lista2 = new ArrayList<Mesa>();
 
@@ -44,6 +44,8 @@ public class MesaController {
             }
         }
        return lista2;
+       */
+      return mesaService.getAllMesasAbiertas();
     }
 
 

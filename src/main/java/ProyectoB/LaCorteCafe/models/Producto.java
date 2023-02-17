@@ -6,6 +6,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -24,6 +26,11 @@ public class Producto {
     @Column(name = "precio")
     private int precio;
 
+/*     
+    @ManyToOne()
+    @JoinColumn(name = "mesa_id")
+    private Mesa mesa;
+*/
 
 
     public Producto(){        
