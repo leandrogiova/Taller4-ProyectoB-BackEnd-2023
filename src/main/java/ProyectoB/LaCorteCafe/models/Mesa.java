@@ -1,6 +1,7 @@
 package ProyectoB.LaCorteCafe.models;
 
-import java.sql.Date;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -9,6 +10,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -19,22 +21,16 @@ public class Mesa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @Column(name = "numero_mesa")
     private int numero_mesa;
-
-     
-//    @OneToMany(mappedBy = "mesa", cascade = CascadeType.ALL, orphanRemoval = true)
-    @OneToMany
-    private List<Producto> listaProductos;
 
     @Column(name = "estado")
     private Boolean estado;
     
     @Column(name = "fecha")
-    private Date fecha;
+    private LocalDateTime fecha;
 
-    
     @Column(name = "precio_temporal")
     private int precio_temporal;
     
@@ -44,10 +40,26 @@ public class Mesa {
     @Column(name = "forma_pago")
     private String forma_pago;
 
+    @Column(name = "detalle")
+    private String detalle;
+
+    @OneToMany()
+    private List<Producto> listaProductos;
+
 
     public Mesa(){
     }
 
+    public Mesa (int numero_mesa, boolean estado, boolean fecha, LocalDateTime fecha_, 
+    int precio_temporal, int precio_total, String forma_pago, String detalle) {
+        this.numero_mesa = numero_mesa;
+        this.estado = estado;
+        this.fecha = fecha_;
+        this.precio_temporal = precio_temporal;
+        this.precio_total = precio_total;
+        this.forma_pago = forma_pago;
+        this.detalle = detalle;
+    }
 
     public Long getId() {
         return id;
@@ -55,15 +67,6 @@ public class Mesa {
     public void setId(Long id) {
         this.id = id;
     }
-
- 
-    public List<Producto> getListaProductos() {
-        return listaProductos;
-    }
-    public void setListaProductos(List<Producto> listaProductos) {
-        this.listaProductos = listaProductos;
-    }
-
 
     public int getNumero_mesa() {
         return numero_mesa;
@@ -80,11 +83,11 @@ public class Mesa {
        return estado;
     }
 
-
-    public Date getFecha() {
+ 
+    public LocalDateTime getFecha() {
         return fecha;
     }
-    public void setFecha(Date fecha) {
+    public void setFecha(LocalDateTime fecha) {
         this.fecha = fecha;
     }
 
@@ -112,14 +115,20 @@ public class Mesa {
         return this.forma_pago;
     }
 
-/* 
-    public void setProductosCobrados(Producto[] productosCobrados){
-        this.productosCobrados = productosCobrados;
+    public String getDetalle() {
+        return detalle;
     }
-    public Producto[] getProductosCobrados(){
-        return productosCobrados;
+    public void setDetalle(String detalle) {
+        this.detalle = detalle;
     }
-*/
+
+    public List<Producto> getListaProductos() {
+        return listaProductos;
+    }
+    public void setListaProductos(List<Producto> listaProductos) {
+        this.listaProductos = listaProductos;
+    }
+
 
 }
 

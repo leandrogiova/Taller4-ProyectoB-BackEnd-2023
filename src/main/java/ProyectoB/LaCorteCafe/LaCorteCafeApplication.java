@@ -1,6 +1,5 @@
 package ProyectoB.LaCorteCafe;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,56 +24,50 @@ public class LaCorteCafeApplication {
 	@Bean
 	public CommandLineRunner loadAgendaData(ProductoRepository productoRepository, MesaRepository mesaRepository){
 		return (args) -> {
-			
-/*	
-			Producto producto1 = new Producto();
-			producto1.setNombre("cafesiño");
-			producto1.setNumeroProducto(110);
-			producto1.setPrecio(11);
-			productoRepository.save(producto1);
+			System.out.println("\n\n\n\n\n\n\nEstoy en el commandLineRunner\n\n\n\n\n\n\n");
 
-			Producto producto2 = new Producto();
-			producto1.setNombre("medialunaGrande");
-			producto1.setNumeroProducto(90);
-			producto1.setPrecio(90);
-			productoRepository.save(producto2);
+/*			
+			Producto p1 = new Producto();
+			p1.setNombre("MediaLuna");
+			p1.setNumeroProducto(200);
+			p1.setPrecio(120);
 
-			Producto producto3 = new Producto();
-			producto1.setNombre("medialuna");
-			producto1.setNumeroProducto(88);
-			producto1.setPrecio(87);
-			productoRepository.save(producto3);
+			Producto p2 = new Producto();
+			p1.setNombre("MediaLuna Dulce");
+			p1.setNumeroProducto(200);
+			p1.setPrecio(130);
 
+			Producto p3 = new Producto();
+			p1.setNombre("MediaLuna Roja");
+			p1.setNumeroProducto(200);
+			p1.setPrecio(140);
 
-			Producto[] lista = {producto1, producto2, producto3};
-			ArrayList lista2 = new ArrayList<>();
-			lista2.add(producto1);
-			lista2.add(producto2);
-			lista2.add(producto3);
+			Producto p4 = new Producto();
+			p1.setNombre("MediaLuna Negra");
+			p1.setNumeroProducto(200);
+			p1.setPrecio(150);
 
 
+			List lista1 = new ArrayList();
+			lista1.add(p1);
+			lista1.add(p2);
+			lista1.add(p3);
+			lista1.add(p4);
 
-			
-			Mesa mesa1 = new Mesa();
-			
-			mesa1.setListaProductos(lista2);
+			Mesa m1 = new Mesa();
+			m1.setEstado(true);
+			m1.setFormaPago("Efectivo");
+			m1.setNumero_mesa(200);
+			m1.setPrecio_temporal(0);
+			m1.setPrecio_total(200);
+			m1.setListaProductos(lista1);
+			mesaRepository.save(m1);
 
-			mesa1.setNumero_mesa(11);
-			mesa1.setEstado(true);
-			mesa1.setPrecio_temporal(100);
-			mesa1.setPrecio_total(500);
-			mesaRepository.save(mesa1);
-		
-		Mesa mesa2 = new Mesa();
+			System.out.println("m1 = " + m1 + "\n\n\n\n\n");
+*/	
 
-		mesa2.setId((long) 99);
-		mesa2.setNumero_mesa(98);
-		mesa2.setNumero_mesa(7);
-		mesa2.setEstado(true);
-		mesa2.setPrecio_temporal(100);
-		mesa2.setPrecio_total(500);
-		mesaRepository.save(mesa2);
-*/
+
+
 	};
 
 	}

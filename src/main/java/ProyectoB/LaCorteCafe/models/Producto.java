@@ -1,12 +1,14 @@
 package ProyectoB.LaCorteCafe.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -26,23 +28,20 @@ public class Producto {
     @Column(name = "precio")
     private int precio;
 
-/*     
-    @ManyToOne()
-    @JoinColumn(name = "mesa_id")
+/*    
+    @ManyToMany
+    @JsonIgnore
     private Mesa mesa;
 */
 
-
     public Producto(){        
     }
+
     public Producto(Long id, String nombre, int numeroProducto,int precio) {
         this.id = id;
         this.numeroProducto = numeroProducto;
         this.nombre = nombre;
         this.precio = precio;
-//        this.enStock = enStock;
-//        this.cobrado = cobrado;
-
     }
 
 
@@ -74,22 +73,7 @@ public class Producto {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     } 
-/* 
-    public boolean getEnStock(){
-        return enStock;
-    }
-    public void setEntock(boolean enStock){
-        this.enStock = enStock;
-    }
-*/
-//    public void setId(int i) {
-//    }
 
-//    public boolean getCobrado(){
-//        return cobrado;
-//    }
-//    public void setCobrado(boolean cobrado){
-//        this.cobrado = cobrado;
-//    }
+
 
 }

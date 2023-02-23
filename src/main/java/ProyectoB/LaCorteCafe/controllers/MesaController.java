@@ -32,8 +32,7 @@ public class MesaController {
     private LocalDateTime fecha2;
 
     @GetMapping("/lista")
-    public List<Mesa> mesasAbiertas(){
-      /* 
+    public List<Mesa> mesasAbiertas(){  
         List<Mesa> lista1;
         List<Mesa> lista2 = new ArrayList<Mesa>();
 
@@ -44,9 +43,8 @@ public class MesaController {
             }
         }
        return lista2;
-       */
-      return mesaService.getAllMesasAbiertas();
     }
+
 
 
 
