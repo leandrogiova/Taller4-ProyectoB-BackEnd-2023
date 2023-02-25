@@ -47,6 +47,10 @@ public class Mesa {
     private List<Producto> listaProductos;
 
 
+    @OneToMany()
+    private List<Producto> listaProductosCobrados;
+
+
     public Mesa(){
     }
 
@@ -129,6 +133,12 @@ public class Mesa {
         this.listaProductos = listaProductos;
     }
 
+    public List<Producto> getListaProductosCobrados() {
+        return listaProductosCobrados;
+    }
+    public void setListaProductosCobrados(List<Producto> listaProductosCobrados) {
+        this.listaProductosCobrados = listaProductosCobrados;
+    }
 
 }
 
