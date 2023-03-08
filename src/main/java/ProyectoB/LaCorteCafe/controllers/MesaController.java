@@ -93,6 +93,7 @@ public class MesaController {
         mesaActual.setListaProductosCobrados(m1.getListaProductosCobrados());
         mesaActual.setPrecio_total(m1.getPrecio_total());
         mesaActual.setPrecio_temporal(m1.getPrecio_temporal());
+        mesaActual.setFormaPago(m1.getFormaPago());
 
         mesaProductoRepo.save(mesaActual);
     }
