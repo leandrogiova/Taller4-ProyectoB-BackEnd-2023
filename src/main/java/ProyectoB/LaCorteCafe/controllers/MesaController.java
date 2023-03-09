@@ -46,42 +46,18 @@ public class MesaController {
     }
 
 
-
-
     @PostMapping("/envio")
     public void enviarProductoAMesa(@RequestBody Mesa m1){
         mesaService.enviarProductoMesa(m1);
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*    
-    @PostMapping("/cobrarMesa")
-    public void cobrarMesa(@RequestBody Mesa m1){
-
-        Mesa mesaActual = mesaProductoRepo.findById(m1.getId()).orElse(null);
-
-        //actualiza el estado de la mesa para cerarla
-        mesaActual.setEstado(m1.getEstado());
-        
-        mesaProductoRepo.save(mesaActual);
-    }
-*/
-
-
-
+    /*
+       * Funcion actualizar
+       * Actualiza una mesa, recibe una mesa del FrontEnd, la actualiza y la vuelve a enviar a la base de datos actulizandola 
+       * Recibe del FrontEnd un objeto Mesa
+       * No tiene ningún retorno
+    */
     @PostMapping("/updateMesa")
     public void actualizar(@RequestBody Mesa m1){
         Mesa mesaActual = mesaProductoRepo.findById(m1.getId()).orElse(null);
@@ -99,11 +75,6 @@ public class MesaController {
     }
 
 /*
-
-
-
-
-
     @PostMapping("/FechasResumenes")
     public void fechasResumenes(@RequestBody LocalDateTime fechas[]){
         fecha1 = fechas[0];
@@ -137,7 +108,6 @@ public class MesaController {
 
         return lista2;
     } 
-
 */
 
 
